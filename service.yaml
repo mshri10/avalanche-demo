@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: avalanche-svc
+  labels:
+    app: avalanche
+spec:
+  ports:
+    - port: 9001
+      targetPort: 9001
+      name: http-avalanche
+  type: ClusterIP
+  clusterIP: None
+  selector:
+    app: avalanche

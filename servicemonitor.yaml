@@ -1,0 +1,13 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: avalanche-servicemonitor
+  labels:
+    name: avalanche
+spec:
+  selector:
+    matchLabels:
+      app: avalanche
+  endpoints:
+  - port: http-avalanche
+    interval: 15s
